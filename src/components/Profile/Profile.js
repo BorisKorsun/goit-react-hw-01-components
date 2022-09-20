@@ -1,33 +1,41 @@
 import PropTypes from 'prop-types';
 
+import { ProfileBox, ProfileDesc, UserAvatar, UserName, UserTag, UserStats, UserLocation, StatsItems, UserLabel, UserQuantity } from './Profile.styled';
+
 export const Profile = ({ username, tag, location, avatar, followers, views, likes }) => {
     return (
-        <div class="profile">
-            <div class="description">
-                <img
-                src={avatar}
-                alt="User avatar"
-                class="avatar"
-                />
-                <p class="name">{username}</p>
-                <p class="tag">@{tag}</p>
-                <p class="location">{location}</p>
-            </div>
+        <ProfileBox>
+            <ProfileDesc>
+                <UserAvatar src={avatar} alt="User avatar"></UserAvatar>
+                <UserName>{username}</UserName>
+                <UserTag>@{tag}</UserTag>
+                <UserLocation>{location}</UserLocation>
+            </ProfileDesc>
 
-            <ul class="stats">
-                <li>
-                    <span class="label">{followers}</span>
-                    <span class="quantity">1000</span>
-                </li>
-                <li>
-                    <span class="label">{views}</span>
-                    <span class="quantity">2000</span>
-                </li>
-                <li>
-                    <span class="label">{likes}</span>
-                    <span class="quantity">3000</span>
-                </li>
-            </ul>
-        </div>
+            <UserStats>
+                <StatsItems>
+                    <UserLabel>Followers:</UserLabel>
+                    <UserQuantity>{followers}</UserQuantity>
+                </StatsItems>
+                <StatsItems>
+                    <UserLabel>Views:</UserLabel>
+                    <UserQuantity>{views}</UserQuantity>
+                </StatsItems>
+                <StatsItems>
+                    <UserLabel>Likes:</UserLabel>
+                    <UserQuantity>{likes}</UserQuantity>
+                </StatsItems>
+            </UserStats>
+        </ProfileBox>
     )
+}
+
+Profile.propTypes = {
+    username: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
 }
