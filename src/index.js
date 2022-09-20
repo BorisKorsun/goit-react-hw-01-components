@@ -7,7 +7,6 @@ import './index.css';
 
 const theme = {
   colors: {
-
   }
 }
 
