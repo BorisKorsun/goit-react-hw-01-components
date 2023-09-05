@@ -23,26 +23,26 @@ const Profile = ({
   likes,
 }) => {
   return (
-    <ProfileBox className="profile">
+    <ProfileBox>
       <ProfileDesc>
-        <UserAvatar src={avatar} alt="User avatar" className="avatar" />
-        <UserName className="name">{username}</UserName>
-        <UserTag className="tag">@{tag}</UserTag>
-        <UserLocation className="location">{location}</UserLocation>
+        <UserAvatar src={avatar} alt="User avatar"/>
+        <UserName>{username}</UserName>
+        <UserTag>@{tag}</UserTag>
+        <UserLocation>{location}</UserLocation>
       </ProfileDesc>
 
-      <UserStats className="stats">
+      <UserStats>
         <StatsItems>
-          <UserLabel className="label">Followers</UserLabel>
-          <UserQuantity className="quantity">{followers}</UserQuantity>
+          <UserLabel>Followers</UserLabel>
+          <UserQuantity>{followers}</UserQuantity>
         </StatsItems>
         <StatsItems>
-          <UserLabel className="label">Views</UserLabel>
-          <UserQuantity className="quantity">{views}</UserQuantity>
+          <UserLabel>Views</UserLabel>
+          <UserQuantity>{views}</UserQuantity>
         </StatsItems>
         <StatsItems>
-          <UserLabel className="label">Likes</UserLabel>
-          <UserQuantity className="quantity">{likes}</UserQuantity>
+          <UserLabel>Likes</UserLabel>
+          <UserQuantity>{likes}</UserQuantity>
         </StatsItems>
       </UserStats>
     </ProfileBox>
